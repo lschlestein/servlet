@@ -12,4 +12,5 @@ Apontar para o local onde estão os arquivos descompactados do Tomcat obtidos an
 ![Intellij](https://github.com/lschlestein/servlet/assets/103784532/5fd5e336-b50c-412c-a425-8193d9821d7d)
 Na aba Before Launch configurar como abaixo.
 ![image](https://github.com/lschlestein/servlet/assets/103784532/cd7b1efd-8306-4f3e-958c-4c8baa5cfa8c)
-
+Na aba Deployment, configura o caminhao de acesso ao projeto em Application Context
+![Intellij](https://github.com/lschlestein/servlet/assets/103784532/f6441891-9fa6-464a-b250-336f039730bf)
