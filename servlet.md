@@ -10,3 +10,6 @@ Tomcat Server -> local
 ![Intellij](https://github.com/lschlestein/servlet/assets/103784532/8ddb71e2-fc24-4ff7-a32d-c48be68f2fe2)
 Apontar para o local onde estão os arquivos descompactados do Tomcat obtidos anteriormente.
 ![Intellij](https://github.com/lschlestein/servlet/assets/103784532/5fd5e336-b50c-412c-a425-8193d9821d7d)
+Na aba Before Launch configurar como abaixo.
+![image](https://github.com/lschlestein/servlet/assets/103784532/cd7b1efd-8306-4f3e-958c-4c8baa5cfa8c)
+
