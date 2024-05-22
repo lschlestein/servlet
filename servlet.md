@@ -26,3 +26,19 @@ Clicar em Run.
 ![Intellij](https://github.com/lschlestein/servlet/assets/103784532/7a5b5bf2-9e76-47e7-a72b-fe6bbed68deb)
 O Tomcat deverá inicar e aplicação deverá ser iniciada no navegador.
 
+Adicionar as dependências ao POM.xml:
+```xml
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <version>2.0.0</version>
+</dependency>
+
+
+<dependency>
+    <groupId>org.glassfish.web</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    <version>2.0.0</version>
+</dependency>
+```
+
