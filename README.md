@@ -1,3 +1,85 @@
+Servlet é um componente que trata requisições que sejam enviadas a esse componente.
+Quando ele é embarcado em um Web Container, como o Apache TomCat ou o Glassfish.
+Ele é chamado como resposta a essas requisições.
+@WebServlet("/test")
+Ele deve extender o HttpServlet.
+Os métodos doGet e doPost podem rescritos conforme a necessidade.
+Os parâmetros dos métodos doGet e doPost são do tipo HttpServletRequest e HttpServletResponse.
+
+HttpServletRequest
+Caso desejamos setar algo como requisição, devemos setar o HttpServletRequest
+
+HttpServletResponse
+Se desejamos setar algo como resposta, devemos setar esse parâmetro.
+
+* Request
+ - Recuperar parâmetros
+ - Recuperar headers
+ - Recuperar cookies
+ - Recuperar o método HTTP
+ - Recuperar a InsputStream da requisção
+
+### Recuperando Informações de uma Request
+
+/test?nome=Lucas
+
+```java
+@Webservlet("/test")
+public class TestServlet extends HttpServlet{
+    protected void doGet(
+        HttpServletRequest rq,
+        HttpServletResponse rp) throws IOException{
+            String nome = rq.getParameter("nome"));
+        //....
+        }
+}
+```
+
+* Response
+ - Configurar headers
+ - Configurar tipo de conteúdo (normalmente Html), ou imagens para que o navegador exiba corretamente
+ - Retornar texto
+ - Retornar outro tipo de dado binário
+
+### Configurando Informações de uma Reponse
+
+```java
+@Webservlet("/test")
+public class TestServlet extends HttpServlet{
+    protected void doGet(
+        HttpServletRequest rq,
+        HttpServletResponse rp) throws ServletException, IOException{
+            String nome = rq.getParameter("nome"));
+            rp.GetWriter().println(
+                "<H1>Hello " + nome + "</H1>");
+        }
+}
+```
+
+Na abordagem MVC não é usual escrever diretamente o código HTML na saída do servlet.
+É possível repassar internament no Servlet o controle para outro recurso. Então o Servlet faz o processamento necessário, e quanto for necessário repassa o controle para o recurso, nesse caso a página "view.jsp"
+
+```java
+@Webservlet("/test")
+public class TestServlet extends HttpServlet{
+    protected void doGet(
+        HttpServletRequest rq,
+        HttpServletResponse rp) throws ServletExceptio, IOException{
+            //....
+            RequestDispatcher view = rq.getRequestDispatcher("view.jsp");
+            view.forward(rq,rp);
+        }
+}
+```
+Assim é possível passar o controle para uma página jsp, e a mesma terminará o processamento.
+
+```
+
+
+
+
+
+
 # Servlets e Java
 
 ## Configuração da IDE - Intellij IDEA
