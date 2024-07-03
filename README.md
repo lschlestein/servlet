@@ -73,8 +73,6 @@ public class TestServlet extends HttpServlet{
 ```
 Assim é possível passar o controle para uma página jsp, e a mesma terminará o processamento.
 
-```
-
 
 
 
