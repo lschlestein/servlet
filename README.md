@@ -139,7 +139,7 @@ Na abordagem MVC não é usual escrever diretamente o código HTML na saída do 
 public class TestServlet extends HttpServlet{
     protected void doGet(
         HttpServletRequest rq,
-        HttpServletResponse rp) throws ServletExceptio, IOException{
+        HttpServletResponse rp) throws ServletException, IOException{
             //....
             RequestDispatcher view = rq.getRequestDispatcher("view.jsp");
             view.forward(rq,rp);
