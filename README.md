@@ -1,4 +1,38 @@
-Fundamento de aplicações Web.
+## Escopos de uma Aplicação Web
+
+### Uma requisição
+  Escopo mais restrito. Quando a requisição termina, todas as informações contidas nele são perdidas.
+request
+
+### Sessão do Usuário
+  Escopo intermediário. Onde são guardadas informações durante o acesso de um usuário a nossa aplicação.
+request.getSession()
+
+### Aplicação
+  Escopo mais amplo. Acessível de qualquer outra sessão.
+getServletContext()
+
+Todos esses escopos, possuem o métodos setAttiribute("name", "John"), e também o getAttribute("name"). Esses escopos são capazes de manipular tantos tipos primitivos, ou Objects, ou seja, qualquer objeto Java (listas, objetos, arrays, etc) podem ser setados ou buscados dentro desses contextos.
+
+E através desses atributos que passamos informações, dentro de uma aplicação Web.
+
+Mas como é possível manter uma sessão ativa, se o protocolo HTTP não mantém uma conexão ativas? Essa funcionalidade de sessões não é uma funcionalidade nativa do protocolo e por isso foram criadas as seguintes ferramentas:
+
+Cookies:
+Pequenos arquivos que guardam informações que são trocadas entre o web content e o navegador do usuário.
+
+Reescrita de URL
+response.encodeURL(url)
+A reescrita só se feita se o container web percebe que não estão sendo trocados cookies, ou melhor, caso os cookies estejam desativados.
+
+ID da sessão SSL
+ID da sessão da SSL é opção mais segura de se guardar uma sessão, através do id de uma sessão criptográfica de uma sessão SSL. O protocolo SSL é capaz de guardar o id da sessão em uma conexão segura (https), diferente de uma conexão não segura, que não mantém as informações da sessão.
+
+
+
+
+
+Fundamentos de aplicações Web.
 
 A Web não foi sempre da forma que conhecemos atualmente. Nos primórdios ela e os navegadores foram  desenvolvidos para acessar documentos estáticos de hipertexto, possibilitando navegação entre elas.
 O protocolo que possibilitava essa navegação é HTTP, que hoje é utlizado para imagens, vídeos, e diversos outros arquivos alé de hipertexto.
