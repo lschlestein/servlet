@@ -188,6 +188,72 @@ Assim é possível passar o controle para uma página jsp, e a mesma terminará 
 
 
 # Servlets e Java
+Para criarmos um Servlet Básico em Java, utilizando o Tomcat, JSP e o IntelliJ como IDE precisaremos fazer as seguintes configurações para nosso ambiente.
+
+Para os nossas aulas utlizaremos o Tomcat na versão 10.1.25 https://tomcat.apache.org/download-10.cgi.
+É importante sempre verificar a compatibilidade tanto das bibliotecas entre si, bem como, a compatibilidade das bibliotecas com o web container (Tomcat).
+
+Para nosso projetos, as bibliotecas básicas que precisaremos são:
+
+- jakarta.jakartaee-web-api
+``` xml
+<dependency>
+    <groupId>jakarta.platform</groupId>
+    <artifactId>jakarta.jakartaee-web-api</artifactId>
+    <version>10.0.0</version>
+    <scope>provided</scope>
+</dependency>
+```
+Descrição:
+```
+Grupo (groupId): jakarta.platform
+Artefato (artifactId): jakarta.jakartaee-web-api
+Versão: 10.0.0
+Escopo (scope): provided
+```
+Propósito:
+Esta dependência inclui todas as APIs da plataforma Jakarta EE 10, como Servlet, JSP, JSTL, JAX-RS, CDI, entre outras. Utilizando esta dependência, você tem acesso a todas as classes e interfaces da especificação Jakarta EE.
+
+Escopo provided:
+O escopo provided significa que esta dependência é necessária para compilar e testar seu projeto, mas não será incluída no arquivo WAR final. Isso acontece porque a implementação dessas APIs é fornecida pelo servidor de aplicação (Tomcat, no seu caso).
+
+- jakarta.servlet.jsp.jstl-api
+``` xml
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <version>3.0.0</version>
+</dependency>
+```
+Descrição:
+
+Grupo (groupId): jakarta.servlet.jsp.jstl
+Artefato (artifactId): jakarta.servlet.jsp.jstl-api
+Versão: 3.0.0
+Propósito:
+Esta dependência fornece a API para a biblioteca de tags JSP Standard Tag Library (JSTL). A JSTL oferece um conjunto de tags úteis para tarefas comuns em páginas JSP, como iteração e formatação.
+
+API vs Implementação:
+Esta dependência inclui apenas a API, ou seja, as interfaces e classes abstratas que definem como a JSTL deve se comportar. Ela não inclui a implementação real das funcionalidades.
+
+- jakarta.servlet.jsp.jstl
+``` xml
+<dependency>
+    <groupId>org.glassfish.web</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    <version>3.0.1</version>
+</dependency>
+```
+Descrição:
+
+Grupo (groupId): org.glassfish.web
+Artefato (artifactId): jakarta.servlet.jsp.jstl
+Versão: 3.0.1
+Propósito:
+Esta dependência fornece a implementação real da JSTL. Enquanto a dependência jakarta.servlet.jsp.jstl-api define as interfaces, esta dependência contém o código que executa as funcionalidades descritas por essas interfaces.
+
+Combinação de API e Implementação:
+Ambas as dependências (jakarta.servlet.jsp.jstl-api e jakarta.servlet.jsp.jstl) são necessárias porque uma define a API e a outra fornece a implementação. A implementação realiza as operações descritas pela API quando as tags JSTL são usadas nas páginas JSP.
 
 ## Configuração da IDE - Intellij IDEA
 1 - Baixar o Tomcat https://tomcat.apache.org/download-10.cgi
