@@ -253,5 +253,70 @@ Esta dependência fornece a implementação real da JSTL. Enquanto a dependênci
 Combinação de API e Implementação:
 Ambas as dependências (jakarta.servlet.jsp.jstl-api e jakarta.servlet.jsp.jstl) são necessárias porque uma define a API e a outra fornece a implementação. A implementação realiza as operações descritas pela API quando as tags JSTL são usadas nas páginas JSP.
 
+Configurado nosso projeto podemos implementar nosso primeiro servlet.
+
+O nosso primeiro objetivo é criar uma página de login simples, ainda sem acesso ao banco de dados:
+Para isso precisaremos configurar um página de acesso a nossa aplicação como segue:
+
+``` html
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Login Servlet</title>
+</head>
+<body>
+<h1>Login</h1>
+<form action="login" method="post">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <br/>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    <br/>
+    <button type="submit">Login</button>
+</form>
+</body>
+</html>
+```
+
+Aqui estamos fazendo uma requisição do tipo "post" em nosso servlet. O action="login", deve estar atribuída a nosso servlet.
+Logo em seguida adicionamos os atributos "email" e "password" a response.
+Se o login é de sucesso, redirecionamos os atributos a view "welcome.jsp".
+Caso contrário a view "loginFail.jsp" será mostrada.
+
+```java
+package com.servlet.login.loginservletexample;
+
+import com.servlet.login.loginservletexample.Model.User;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+@WebServlet({"/index", "/login", "/addNewUser"})
+public class HelloServlet extends HttpServlet {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String action = request.getServletPath();
+        if (action.equals("/login")) {
+            String password = request.getParameter("password");
+            String email = request.getParameter("email");
+            request.setAttribute("email", email);
+            request.setAttribute("password", password);
+            if(email.equals("lucas@mail.com") && password.equals("123")){
+              request.getRequestDispatcher("welcome.jsp").forward(request, response);
+            } else{
+              request.getRequestDispatcher("loginFail.jsp").forward(request, response);
+            }
+        }
+    }
+}
+```
+
 Referências
 [Html Basics](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)
+[Java Expression Laguage](https://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html)
