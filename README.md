@@ -1,37 +1,3 @@
-## Escopos de uma Aplicação Web
-
-### Uma requisição
-  Escopo mais restrito. Quando a requisição termina, todas as informações contidas nele são perdidas.
-request
-
-### Sessão do Usuário
-  Escopo intermediário. Onde são guardadas informações durante o acesso de um usuário a nossa aplicação.
-request.getSession()
-
-### Aplicação
-  Escopo mais amplo. Acessível de qualquer outra sessão.
-getServletContext()
-
-Todos esses escopos, possuem o métodos setAttiribute("name", "John"), e também o getAttribute("name"). Esses escopos são capazes de manipular tantos tipos primitivos, ou Objects, ou seja, qualquer objeto Java (listas, objetos, arrays, etc) podem ser setados ou buscados dentro desses contextos.
-
-E através desses atributos que passamos informações, dentro de uma aplicação Web.
-
-Mas como é possível manter uma sessão ativa, se o protocolo HTTP não mantém uma conexão ativas? Essa funcionalidade de sessões não é uma funcionalidade nativa do protocolo e por isso foram criadas as seguintes ferramentas:
-
-Cookies:
-Pequenos arquivos que guardam informações que são trocadas entre o web content e o navegador do usuário.
-
-Reescrita de URL
-response.encodeURL(url)
-A reescrita só se feita se o container web percebe que não estão sendo trocados cookies, ou melhor, caso os cookies estejam desativados.
-
-ID da sessão SSL
-ID da sessão da SSL é opção mais segura de se guardar uma sessão, através do id de uma sessão criptográfica de uma sessão SSL. O protocolo SSL é capaz de guardar o id da sessão em uma conexão segura (https), diferente de uma conexão não segura, que não mantém as informações da sessão.
-
-
-
-
-
 Fundamentos de aplicações Web.
 
 A Web não foi sempre da forma que conhecemos atualmente. Nos primórdios ela e os navegadores foram  desenvolvidos para acessar documentos estáticos de hipertexto, possibilitando navegação entre elas.
@@ -105,7 +71,7 @@ Uma requisição desse tipo, pode gerar alteração no servidor.
 Quais dos métodos é o mais seguro. Get ou Post?
 Nenhum dos dois, podemos dizer, o POST encapsula um pouco mais as informações, sendo que nem o GET ou POST são mais seguros.
 
-
+## Servlet
 
 Servlet é um componente que trata requisições que sejam enviadas a esse componente.
 Quando ele é embarcado em um Web Container, como o Apache TomCat ou o Glassfish.
@@ -182,10 +148,35 @@ public class TestServlet extends HttpServlet{
 ```
 Assim é possível passar o controle para uma página jsp, e a mesma terminará o processamento.
 
+## Escopos de uma Aplicação Web
 
+### Uma requisição
+  Escopo mais restrito. Quando a requisição termina, todas as informações contidas nele são perdidas.
+request
 
+### Sessão do Usuário
+  Escopo intermediário. Onde são guardadas informações durante o acesso de um usuário a nossa aplicação.
+request.getSession()
 
+### Aplicação
+  Escopo mais amplo. Acessível de qualquer outra sessão.
+getServletContext()
 
+Todos esses escopos, possuem o métodos setAttiribute("name", "John"), e também o getAttribute("name"). Esses escopos são capazes de manipular tantos tipos primitivos, ou Objects, ou seja, qualquer objeto Java (listas, objetos, arrays, etc) podem ser setados ou buscados dentro desses contextos.
+
+E através desses atributos que passamos informações, dentro de uma aplicação Web.
+
+Mas como é possível manter uma sessão ativa, se o protocolo HTTP não mantém uma conexão ativas? Essa funcionalidade de sessões não é uma funcionalidade nativa do protocolo e por isso foram criadas as seguintes ferramentas:
+
+Cookies:
+Pequenos arquivos que guardam informações que são trocadas entre o web content e o navegador do usuário.
+
+Reescrita de URL
+response.encodeURL(url)
+A reescrita só se feita se o container web percebe que não estão sendo trocados cookies, ou melhor, caso os cookies estejam desativados.
+
+ID da sessão SSL
+ID da sessão da SSL é opção mais segura de se guardar uma sessão, através do id de uma sessão criptográfica de uma sessão SSL. O protocolo SSL é capaz de guardar o id da sessão em uma conexão segura (https), diferente de uma conexão não segura, que não mantém as informações da sessão.
 
 # Servlets e Java
 Para criarmos um Servlet Básico em Java, utilizando o Tomcat, JSP e o IntelliJ como IDE precisaremos fazer as seguintes configurações para nosso ambiente.
@@ -262,27 +253,5 @@ Esta dependência fornece a implementação real da JSTL. Enquanto a dependênci
 Combinação de API e Implementação:
 Ambas as dependências (jakarta.servlet.jsp.jstl-api e jakarta.servlet.jsp.jstl) são necessárias porque uma define a API e a outra fornece a implementação. A implementação realiza as operações descritas pela API quando as tags JSTL são usadas nas páginas JSP.
 
-
-
-
-
-
-
-
-Adicionar as dependências ao POM.xml:
-```xml
-<dependency>
-    <groupId>jakarta.servlet.jsp.jstl</groupId>
-    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-    <version>2.0.0</version>
-</dependency>
-
-
-<dependency>
-    <groupId>org.glassfish.web</groupId>
-    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-    <version>2.0.0</version>
-</dependency>
-```
-
+Referências
 [Html Basics](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)
