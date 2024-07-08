@@ -8,9 +8,12 @@ flowchart TD
 ```
  
 Acima a página JSP, o primeiro passo que acontece é uma tradução que vai transformar a página JSP numa classe Java, que vai gerar aquela página. 
-Em seguinda, essa classe Java é compilada, da mesma forma que todas as nossas classes são, ocorrendo então o carregamento e inicialização e aquilo ali, em tempo de execução dentro do Web Container, vai-se transformar servlet. 
-Então, na verdade, a página JSP em tempo de execução vira um servlet. 
+Em seguinda, essa classe Java é compilada, da mesma forma que todas as nossas classes são, ocorrendo então o carregamento e inicialização e aquilo ali, em tempo de execução dentro do Web Container, vai-se transformar servlet.
+
+Então, na verdade, a página JSP em tempo de execução vira um servlet.
+
 É notável, que a primeira renderização de uma pagína JSP é mais demorar, pelo fato dela estar sendo compilada nesse primeiro acesso. Essa compilação ocorre somente no primeiro acesso.
+
 É importante também ressaltar, caso haja algum erro, verificar pela mensagem onde esse erro ocorre. Se foi por exemplo no mento de tranformar JSP em Java? Ou no momento de compilar o código, caso estejamos tentar por exemplo, acessar uma varáivel que não exista.
 
 ## Codificando uma página JSP.
