@@ -306,7 +306,6 @@ public class HelloServlet extends HttpServlet {
             String password = request.getParameter("password");
             String email = request.getParameter("email");
             request.setAttribute("email", email);
-            request.setAttribute("password", password);
             if(email.equals("lucas@mail.com") && password.equals("123")){
               request.getRequestDispatcher("welcome.jsp").forward(request, response);
             } else{
