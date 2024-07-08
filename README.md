@@ -1,8 +1,11 @@
-Fundamentos de aplicações Web.
+# Fundamentos de aplicações Web.
 
 A Web não foi sempre da forma que conhecemos atualmente. Nos primórdios ela e os navegadores foram  desenvolvidos para acessar documentos estáticos de hipertexto, possibilitando navegação entre elas.
+
 O protocolo que possibilitava essa navegação é HTTP, que hoje é utlizado para imagens, vídeos, e diversos outros arquivos alé de hipertexto.
+
 Esse protocolo é baseado em pergunta e resposta (request e reponse).
+
 Quando um navegador por exemplo, faz uma pergunta (request) para um servidor, esse servidor processa essa pergunta e responde (response).
 
 Request
@@ -19,7 +22,6 @@ Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
 (blank line)
   ```
-
 
 Response
 
@@ -56,13 +58,13 @@ A url é dividida basicamente como segue:
 
 Métodos HTTP:
 
-*GET*
+*GET* (PEGAR)
 Acessar um link.
 Principal diferença está na forma de passar os parâmetros. 
 Nesse método passa-se os parâmetros via query string, na url.
 Os parâmetros não devem causar efeitos colaterais no servidor por assim dizer.
 
-*POST*
+*POST* (COLOCAR)
 A passagem de parâmetros vai junto do corpo do requisição.
 Isso auxília a enviar parâmetros maiores.
 Submeter um formulário.
@@ -70,6 +72,7 @@ Uma requisição desse tipo, pode gerar alteração no servidor.
 
 Quais dos métodos é o mais seguro. Get ou Post?
 Nenhum dos dois, podemos dizer, o POST encapsula um pouco mais as informações, sendo que nem o GET ou POST são mais seguros.
+## Páginas JSP
 
 ## Servlet
 
