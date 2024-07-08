@@ -278,11 +278,8 @@ Para isso precisaremos configurar um página de acesso a nossa aplicação como 
 </body>
 </html>
 ```
-
+Ao cliclarmos em Login, os parâmetros email e password, são adicionados a requisição enviada ao servlet.
 Aqui estamos fazendo uma requisição do tipo "post" em nosso servlet. O action="login", deve estar atribuída a nosso servlet.
-Logo em seguida adicionamos os atributos "email" e "password" a response.
-Se o login é de sucesso, redirecionamos os atributos a view "welcome.jsp".
-Caso contrário a view "loginFail.jsp" será mostrada.
 
 ```java
 package com.servlet.login.loginservletexample;
@@ -315,6 +312,9 @@ public class HelloServlet extends HttpServlet {
     }
 }
 ```
+Agora, no servlet adicionamos o atributos "email" a response.
+Se o login é de sucesso, redirecionamos os atributos a view "welcome.jsp".
+Caso contrário a view "loginFail.jsp" será mostrada.
 
 welcome.jsp
 ```html
