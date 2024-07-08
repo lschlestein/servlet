@@ -56,7 +56,7 @@ O objeto acima poderia estar em qualquer um dos escopos. *(request, session ou a
 As biliotecas disponibilizam várias funcionalidades para auxilar com nossas páginas.
 Um exemplo é a exibição de uma lista através de uma laço For.
 
-```html
+```jsp
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 <ul>
     <c:forEach var="person" items="${persons}">
