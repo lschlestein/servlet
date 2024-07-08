@@ -3,7 +3,7 @@ As paginas JSP informações são uma das maneiras de se apresentar informaçõe
 
 ``` mermaid
 flowchart TD
-    A[Página JSP] -->|Tradução| B(Página.java)
+    A[Página JSP.jsp] -->|Tradução| B(Página.java)
     B-->|Compilação| C[Página.class]-->|Carregamento e inicialização| D[Servlet]
 ```
  
