@@ -72,8 +72,8 @@ Uma requisição desse tipo, pode gerar alteração no servidor.
 
 Quais dos métodos é o mais seguro. Get ou Post?
 Nenhum dos dois, podemos dizer, o POST encapsula um pouco mais as informações, sendo que nem o GET ou POST são mais seguros.
-## [Páginas JSP]("/páginasJSP.md")
-## Servlets
+## [Páginas JSP](/paginasJSP.md)
+## [Servlets](/servlet.md)
 
 Referências
 [Html Basics](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)
