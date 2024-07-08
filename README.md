@@ -316,6 +316,35 @@ public class HelloServlet extends HttpServlet {
 }
 ```
 
+welcome.jsp
+```html
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Welcome!</title>
+</head>
+<body>
+<h1>Welcome ${user.name} your email is ${user.email}</h1>
+</body>
+</html>
+```
+loginFail.jsp
+```html
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Login Failed</title>
+</head>
+<body>
+
+<h1>Couldn't find #${user.email}# in database. Try again!</h1>
+
+<a href="login.jsp">Login</a>
+
+</body>
+</html>
+```
+
 Referências
 [Html Basics](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)
 [Java Expression Laguage](https://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html)
