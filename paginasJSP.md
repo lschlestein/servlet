@@ -14,11 +14,11 @@ Então, na verdade, a página JSP em tempo de execução vira um servlet.
 
 É notável, que a primeira renderização de uma pagína JSP é mais demorar, pelo fato dela estar sendo compilada nesse primeiro acesso. Essa compilação ocorre somente no primeiro acesso.
 
-É importante também ressaltar, caso haja algum erro, verificar pela mensagem onde esse erro ocorre. Se foi por exemplo no mento de tranformar JSP em Java? Ou no momento de compilar o código, caso estejamos tentar por exemplo, acessar uma varáivel que não exista.
+É importante também ressaltar, caso haja algum erro, verificar pela mensagem onde esse erro ocorre. Se foi por exemplo no momento de tranformar JSP em Java? Ou no momento de compilar o código, caso estejamos tentar por exemplo, acessar uma varáivel que não exista.
 
 ## Codificando uma página JSP.
 Abaixo veremos algumas formas de escrevermos páginas JSP.
-Atualmente scriptlets, expressões e declarações são pouco usadas por tornar o código, muito poluído, por, misturar código HTML com java.
+Atualmente scriptlets, expressões e declarações são pouco usadas por tornar o código, muito poluído, misturando código HTML com java.
 
 ### Scriptlet
 ```jsp
